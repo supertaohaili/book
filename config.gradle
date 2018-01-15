@@ -1,0 +1,29 @@
+ext {
+    android = [
+            compileSdkVersion: 23,
+            buildToolsVersion: "23.0.2",
+            applicationId    : "com.thl.book",
+            minSdkVersion    : 15,
+            targetSdkVersion : 23,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    version = [
+            androidSupportSdkVersion: "23.4.0",
+    ]
+
+    dependencies = [
+            //support
+            "design"             : "com.android.support:design:${version["androidSupportSdkVersion"]}",
+            "support-v4"         : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "appcompat-v7"       : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "cardview-v7"        : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
+            "recyclerview-v7"    : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+
+            //第三方服务
+            "crashreport_upgrade": "com.tencent.bugly:crashreport_upgrade:1.3.1",   // 其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号
+            "umeng_analytics"    : "com.umeng.analytics:analytics:latest.integration",   // 其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号
+            "glide"                   : "com.github.bumptech.glide:glide:3.8.0",
+    ]
+}

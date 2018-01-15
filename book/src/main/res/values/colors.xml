@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#72c2ff</color>
+    <color name="white">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="dark_gray">#ff999999</color>
+    <color name="orange">#ffefa600</color>
+    <color name="list_item_divider">#cccccc</color>
+    <!-- Reader Color -->
+    <color name="read_textColor">#3B3A38</color>
+    
+    <color name="read_dialog_bg2">#3B3A38</color>
+    <color name="read_dialog_bg">#cf3B3A38</color>
+    <color name="read_dialog_button_select">#72c2ff</color>
+
+    <color name="read_bg_default">#CEC29C</color>
+    <color name="read_bg_1">#CCEBCC</color>
+    <color name="read_bg_2">#37342F</color>
+    <color name="read_bg_3">#D1CEC5</color>
+    <color name="read_bg_4">#001C27</color>
+
+    <color name="read_font_default">#2C2C2C</color>
+    <color name="read_font_1">#2F332D</color>
+    <color name="read_font_2">#92918C</color>
+    <color name="read_font_3">#383429</color>
+    <color name="read_font_4">#627176</color>
+
+    <color name="bg_activity">#e9eff5</color>
+
+</resources>
