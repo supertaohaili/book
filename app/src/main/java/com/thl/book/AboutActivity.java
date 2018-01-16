@@ -26,8 +26,9 @@ public class AboutActivity extends BaseActivity {
         TextView tvMsg = (TextView) findViewById(R.id.tv_msg);
         tvMsg.setMovementMethod(LinkMovementMethod.getInstance());
         tvMsg.setText("\t\t\t\t 一款干净美观的本地电子书阅读器，为了世界和平，决定将代码开源，" +
-                "稍加处理，即可实现各种梦幻功能。" +
-                "点击跳转github: https://github.com/supertaohaili/book，获取最近源码吧");
+                "稍加处理，即可实现各种梦幻功能。\n\n" +
+                "如果你有任何问题/疑问/错误/拥抱请发邮件：taohailili@gmail.com，\n\n" +
+                "获取源码地址:\n https://github.com/supertaohaili/book");
     }
 
     @Override

@@ -1,8 +1,10 @@
 package com.thl.book;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -68,7 +70,7 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
         refreshLayout.setOverScrollRefreshShow(true);
         ib_more = findViewById(R.id.ib_more);
         ib_more.setOnClickListener(this);
-
+        requestPermissins(null);
     }
 
     @Override
@@ -145,11 +147,21 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        Intent intent;
+
         switch (v.getId()) {
             case R.id.fab:
-                intent = new Intent(this, FileChooserActivity.class);
-                this.startActivity(intent);
+                requestPermissins(new PermissionUtils.OnPermissionListener() {
+                    @Override
+                    public void onPermissionGranted() {
+                        Intent intent = new Intent(LocalBookshelfActivity.this, FileChooserActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onPermissionDenied(String[] deniedPermissions) {
+
+                    }
+                });
                 break;
 
             case R.id.ib_more:
@@ -174,12 +186,28 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
                 break;
 
             case R.id.tv_about:
-                intent = new Intent(this, AboutActivity.class);
+                Intent intent = new Intent(this, AboutActivity.class);
                 this.startActivity(intent);
                 popWindow.dissmiss();
                 break;
         }
     }
+
+
+    private void requestPermissins(PermissionUtils.OnPermissionListener listener) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+            return;
+        String[] permissions = {"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"};
+        PermissionUtils.requestPermissions(this, 0
+                , permissions, listener);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionUtils.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+    }
+
 
     private long mExitTime;
 

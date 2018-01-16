@@ -2,6 +2,9 @@
 
 一款干净美观的本地电子书阅读器，为了世界和平，决定将代码开源，稍加处理，即可实现各种梦幻功能。
 
+#源码中有三本电子书，可复制进手机进行测试
+
+
 
 # 效果图
 
@@ -11,7 +14,7 @@
  <img src="https://github.com/supertaohaili/book/blob/master/S80115-180620.jpg" width="300"><img src="https://github.com/supertaohaili/book/blob/master/S80115-180655.jpg" width="300">
 
 apk下载链接
-<a href="https://github.com/supertaohaili/fingerprint/blob/master/book1.0.0.apk">https://github.com/supertaohaili/fingerprint/blob/master/book1.0.0.apk</a>
+<a href="https://www.coolapk.com/apk/174412">https://www.coolapk.com/apk/174412</a>
 
 # 使用
 ```
@@ -47,7 +50,7 @@ ReadActivity.openBook(book, LocalBookshelfActivity.this);
 
 第三方及开源框架使用:
 
-``` java
+```
 1、添加了bugly 异常上报与更新，登录https://bugly.qq.com/v2/crash-reporting/dashboard/9bb43e127f?pid=1 申请appid，替换即可
 
 2、添加了友盟统计，可登录http://passport.umeng.com/login ,申请appkey，替换即可
