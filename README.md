@@ -1,4 +1,4 @@
-# “本地电子书”介绍
+# 本地电子书
 
 一款干净美观的本地电子书阅读器，为了世界和平，决定将代码开源，稍加处理，即可实现各种梦幻功能。
 
@@ -11,7 +11,7 @@
  <img src="https://github.com/supertaohaili/book/blob/master/S80115-180620.jpg" width="300"><img src="https://github.com/supertaohaili/book/blob/master/S80115-180655.jpg" width="300">
 
 apk下载链接
-<a href="https://github.com/supertaohaili/book/blob/master/app-debug.apk">https://github.com/supertaohaili/book/blob/master/app-debug.apk</a>
+<a href="https://github.com/supertaohaili/fingerprint/blob/master/book1.0.0.apk">https://github.com/supertaohaili/fingerprint/blob/master/book1.0.0.apk</a>
 
 # 使用
 ```
@@ -26,6 +26,7 @@ dependencies {
      compile 'com.github.supertaohaili:book:1.0.0'
 }
 ```
+
 第三方及开源框架使用:
 1、添加了bugly 异常上报与更新，登录https://bugly.qq.com/v2/crash-reporting/dashboard/9bb43e127f?pid=1 申请appid，替换即可
 
@@ -53,6 +54,7 @@ DataSupport.delete(BookList.class, book.getId());
 
 阅读单子书：
 ReadActivity.openBook(book, LocalBookshelfActivity.this);
+```
 
 ### Known Issues
 If you have any questions/queries/Bugs/Hugs please mail @
