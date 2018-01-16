@@ -26,7 +26,7 @@ allprojects {
 }
 
 dependencies {
-     compile 'com.github.supertaohaili:book:1.0.0'
+    compile 'com.github.supertaohaili:book:1.0.0'
 }
 ```
 
