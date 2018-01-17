@@ -1,6 +1,5 @@
 package com.thl.book;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -28,7 +27,7 @@ public class AboutActivity extends BaseActivity {
         tvMsg.setText("\t\t\t\t 一款干净美观的本地电子书阅读器，为了世界和平，决定将代码开源，" +
                 "稍加处理，即可实现各种梦幻功能。\n\n" +
                 "如果你有任何问题/疑问/错误/拥抱请发邮件：taohailili@gmail.com，\n\n" +
-                "获取源码地址:\n https://github.com/supertaohaili/book");
+                "获取源码地址:\n https://my.oschina.net/u/2440407/blog/1607740");
     }
 
     @Override
