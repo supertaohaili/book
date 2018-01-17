@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
@@ -58,8 +59,8 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
     protected void initView() {
         TextView tv_title = (TextView) findViewById(R.id.tv_title);
         tv_title.setText("本地书架");
-        View fad = findViewById(R.id.fab);
-        fad.setOnClickListener(this);
+
+        findViewById(R.id.add_book).setOnClickListener(this);
 
         refreshLayout = (TwinklingRefreshLayout) findViewById(R.id.refresh);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
@@ -70,7 +71,6 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
         refreshLayout.setOverScrollRefreshShow(true);
         ib_more = findViewById(R.id.ib_more);
         ib_more.setOnClickListener(this);
-        requestPermissins(null);
     }
 
     @Override
@@ -149,19 +149,25 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.fab:
-                requestPermissins(new PermissionUtils.OnPermissionListener() {
-                    @Override
-                    public void onPermissionGranted() {
-                        Intent intent = new Intent(LocalBookshelfActivity.this, FileChooserActivity.class);
-                        startActivity(intent);
-                    }
+            case R.id.add_book:
 
-                    @Override
-                    public void onPermissionDenied(String[] deniedPermissions) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                    Intent intent = new Intent(LocalBookshelfActivity.this, FileChooserActivity.class);
+                    startActivity(intent);
+                } else {
+                    requestPermissins(new PermissionUtils.OnPermissionListener() {
+                        @Override
+                        public void onPermissionGranted() {
+                            Intent intent = new Intent(LocalBookshelfActivity.this, FileChooserActivity.class);
+                            startActivity(intent);
+                        }
 
-                    }
-                });
+                        @Override
+                        public void onPermissionDenied(String[] deniedPermissions) {
+
+                        }
+                    });
+                }
                 break;
 
             case R.id.ib_more:
@@ -195,8 +201,6 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
 
 
     private void requestPermissins(PermissionUtils.OnPermissionListener listener) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
-            return;
         String[] permissions = {"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"};
         PermissionUtils.requestPermissions(this, 0
                 , permissions, listener);
