@@ -1,16 +1,16 @@
 ext {
     android = [
-            compileSdkVersion: 23,
-            buildToolsVersion: "23.0.2",
+            compileSdkVersion: 25,
+            buildToolsVersion: "26.0.2",
             applicationId    : "com.thl.book",
             minSdkVersion    : 15,
-            targetSdkVersion : 23,
+            targetSdkVersion : 25,
             versionCode      : 2,
             versionName      : "1.0.1"
     ]
 
     version = [
-            androidSupportSdkVersion: "23.4.0",
+            androidSupportSdkVersion: "25.0.0",
     ]
 
     dependencies = [

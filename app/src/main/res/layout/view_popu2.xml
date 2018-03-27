@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="#f5cdcd"
+        android:padding="1px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/add_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_menu_sel"
+            android:gravity="center"
+            android:paddingBottom="9sp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="9sp"
+            android:text="添加图书"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <include layout="@layout/include_horizontal_line" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_menu_sel"
+            android:gravity="center"
+            android:paddingBottom="9sp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="9sp"
+            android:text="删除图书"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <include layout="@layout/include_horizontal_line" />
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_menu_sel"
+
+            android:gravity="center"
+            android:paddingBottom="9sp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="9sp"
+            android:text="分享"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <include layout="@layout/include_horizontal_line" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_menu_sel"
+
+            android:gravity="center"
+            android:paddingBottom="9sp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="9sp"
+            android:text="关于"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

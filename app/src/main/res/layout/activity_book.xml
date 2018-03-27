@@ -7,38 +7,7 @@
     android:background="@color/bg_activity"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/rl_title"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/titleheight"
-        android:background="@color/theme_color">
-
-
-        <TextView
-            android:id="@+id/tv_title"
-            style="@style/titletext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="本地图书"/>
-
-        <ImageButton
-            android:id="@+id/ib_more"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:background="@drawable/bg_imagebutton"
-            android:contentDescription="@string/app_name"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:src="@drawable/ic_menu_more" />
-
-    </RelativeLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <include layout="@layout/layout_title"/>
 
         <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
             android:id="@+id/refresh"
@@ -53,19 +22,4 @@
                 android:layout_marginRight="5dp"/>
 
         </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/add_book"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="25dp"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/index"
-            app:borderWidth="0dp"
-            app:elevation="2dp"
-            app:pressedTranslationZ="0dp"
-            app:rippleColor="?attr/colorPrimary"/>
-    </FrameLayout>
 </LinearLayout>

@@ -28,60 +28,60 @@ android {
         }
     }
 
-    if (signPropertiesFile.exists()) {
-        Properties properties = new Properties()
-        properties.load(new FileInputStream(signPropertiesFile))
-        signingConfigs {
-            debug {
-                storeFile rootProject.file(properties['keystore'])
-                storePassword properties['storePassword']
-                keyAlias properties['keyAlias']
-                keyPassword properties['keyPassword']
-            }
-            release {
-                storeFile rootProject.file(properties['keystore'])
-                storePassword properties['storePassword']
-                keyAlias properties['keyAlias']
-                keyPassword properties['keyPassword']
-            }
-        }
-    }
+//    if (signPropertiesFile.exists()) {
+//        Properties properties = new Properties()
+//        properties.load(new FileInputStream(signPropertiesFile))
+//        signingConfigs {
+//            debug {
+//                storeFile rootProject.file(properties['keystore'])
+//                storePassword properties['storePassword']
+//                keyAlias properties['keyAlias']
+//                keyPassword properties['keyPassword']
+//            }
+//            release {
+//                storeFile rootProject.file(properties['keystore'])
+//                storePassword properties['storePassword']
+//                keyAlias properties['keyAlias']
+//                keyPassword properties['keyPassword']
+//            }
+//        }
+//    }
 
-    buildTypes {
-
-        debug {
-            buildConfigField "boolean", "LOG_DEBUG", "true"
-            buildConfigField "boolean", "USE_CANARY", "true"
-            versionNameSuffix "-debug"
-            debuggable true
-            minifyEnabled false
-            zipAlignEnabled false
-            shrinkResources false
-            signingConfig signingConfigs.debug
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-        }
-
-        release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
-            buildConfigField "boolean", "USE_CANARY", "false"
-            debuggable false
-            minifyEnabled true
-            zipAlignEnabled true
-            shrinkResources true
-            signingConfig signingConfigs.release
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        def fileName = "book${defaultConfig.versionName}_${releaseTime()}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
-                }
-            }
-        }
-    }
+//    buildTypes {
+//
+//        debug {
+//            buildConfigField "boolean", "LOG_DEBUG", "true"
+//            buildConfigField "boolean", "USE_CANARY", "true"
+//            versionNameSuffix "-debug"
+//            debuggable true
+//            minifyEnabled false
+//            zipAlignEnabled false
+//            shrinkResources false
+//            signingConfig signingConfigs.debug
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//
+//        }
+//
+//        release {
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+//            buildConfigField "boolean", "USE_CANARY", "false"
+//            debuggable false
+//            minifyEnabled true
+//            zipAlignEnabled true
+//            shrinkResources true
+//            signingConfig signingConfigs.release
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            applicationVariants.all { variant ->
+//                variant.outputs.each { output ->
+//                    def outputFile = output.outputFile
+//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                        def fileName = "book${defaultConfig.versionName}_${releaseTime()}.apk"
+//                        output.outputFile = new File(outputFile.parent, fileName)
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     //删除META-INF信息
     packagingOptions {
@@ -118,7 +118,7 @@ dependencies {
     compile rootProject.ext.dependencies["cardview-v7"]
     compile rootProject.ext.dependencies["crashreport_upgrade"]
     compile rootProject.ext.dependencies["umeng_analytics"]
-//    compile rootProject.ext.dependencies["glide"]
+    compile 'com.github.supertaohaili:MediaLoader:1.0.0'
     compile(name: "refresh-release", ext: "aar")
     compile project(':book')
 }

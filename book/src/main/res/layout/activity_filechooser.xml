@@ -5,7 +5,7 @@
                                                  android:layout_height="match_parent"
                                                  android:background="@color/bg_activity"
                                                  android:fitsSystemWindows="true"
-                                                 tools:context="com.project.reader.com.thl.reader.BookActivity">
+    >
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

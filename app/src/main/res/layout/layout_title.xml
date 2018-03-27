@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@drawable/bg_gradient_linear_blue_270"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_item_sel"
+        android:contentDescription="@string/app_name"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:scaleType="center"
+        android:visibility="gone"
+        android:src="@drawable/img_back" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="本地视频"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
+
+    <ImageButton
+        android:id="@+id/ib_more"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_item_sel"
+        android:contentDescription="@string/app_name"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:scaleType="center"
+        android:visibility="gone"
+        android:src="@drawable/img_more" />
+</RelativeLayout>

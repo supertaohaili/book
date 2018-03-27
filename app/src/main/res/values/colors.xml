@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3a3b36</color>
-    <color name="colorPrimaryDark">#3a3b36</color>
-    <color name="colorAccent">#3a3b36</color>
+    <color name="colorPrimary">#24abff</color>
+    <color name="colorPrimaryDark">#24abff</color>
+    <color name="colorAccent">#24abff</color>
 
-    <color name="theme_color">#3a3b36</color>
+    <color name="theme_color">#24abff</color>
 
     <color name="bg_activity">#e9eff5</color>
 
