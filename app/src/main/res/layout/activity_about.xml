@@ -1,21 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_album"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_activity"
+    android:background="#e7e7e7"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_title"/>
+    <include
+        android:id="@+id/llt_title"
+        layout="@layout/layout_title" />
 
-    <TextView
-        android:id="@+id/tv_msg"
-        android:layout_margin="12dp"
-        android:textColor="#333333"
-        android:textSize="15sp"
-        android:autoLink="web"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:background="@mipmap/icon" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="@string/app_name"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_tv_sel"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="意见反馈"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="25dp"
+                android:lineSpacingExtra="5dp"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:layout_marginBottom="35dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

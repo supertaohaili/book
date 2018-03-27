@@ -148,13 +148,27 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
     @Override
     protected void onResume() {
         super.onResume();
-        initFristData();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+
+        } else {
+            requestPermissins(new PermissionUtils.OnPermissionListener() {
+                @Override
+                public void onPermissionGranted() {
+                    initFristData();
+                }
+
+                @Override
+                public void onPermissionDenied(String[] deniedPermissions) {
+
+                }
+            });
+        }
 
     }
 
     private void initFristData() {
         boolean initFristData = SharedPreferencesUtils.getBoolean(this, "initFristData", true);
-        if (true) {
+        if (initFristData) {
             MediaLoader.getLoader().loadFiles(LocalBookshelfActivity.this, new OnFileLoaderCallBack(FileType.DOC) {
                 @Override
                 public void onResult(FileResult result) {
