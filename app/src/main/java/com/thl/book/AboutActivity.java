@@ -16,6 +16,9 @@ public class AboutActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        TextView tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_title.setText("关于");
+        findViewById(R.id.ib_back).setVisibility(View.VISIBLE);
         findViewById(R.id.ib_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

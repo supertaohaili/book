@@ -7,34 +7,7 @@
     android:background="@color/bg_activity"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/rl_title"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/titleheight"
-        android:background="@color/theme_color">
-
-        <ImageButton
-            android:id="@+id/ib_back"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:background="@drawable/bg_imagebutton"
-            android:contentDescription="@string/app_name"
-            android:paddingLeft="12dp"
-            android:paddingRight="40dp"
-            android:src="@drawable/bt_nav_back" />
-
-
-        <TextView
-            android:id="@+id/tv_title"
-            style="@style/titletext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="关于" />
-
-
-    </RelativeLayout>
+    <include layout="@layout/layout_title"/>
 
     <TextView
         android:id="@+id/tv_msg"
