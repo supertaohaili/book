@@ -12,6 +12,22 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/find_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_menu_sel"
+            android:gravity="center"
+            android:paddingBottom="9sp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="9sp"
+            android:text="本地搜索"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <include layout="@layout/include_horizontal_line" />
+
+        <TextView
             android:id="@+id/add_book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,7 +37,7 @@
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
             android:paddingTop="9sp"
-            android:text="添加图书"
+            android:text="手动添加"
             android:textColor="#000000"
             android:textSize="14sp" />
 

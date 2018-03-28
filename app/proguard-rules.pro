@@ -381,6 +381,10 @@ public static final int *;
 -dontwarn  cn.bmob.push.**
 -keep class cn.bmob.push.** {*;}
 
+# keep BmobPush
+-dontwarn  com.jiajunhui.xapp.medialoader.**
+-keep class com.jiajunhui.xapp.medialoader.** {*;}
+
 # keep okhttp3、okio
 -dontwarn okhttp3.**
 -keep class okhttp3.** { *;}

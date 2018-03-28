@@ -326,6 +326,10 @@ public class PageFactory {
 
    //向前翻页
     public void prePage(){
+        if (currentPage==null){
+            Toast.makeText(mContext, "数据异常，请重试", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (currentPage.getBegin() <= 0) {
             Log.e(TAG,"当前是第一页");
             if (!m_isfirstPage){
@@ -375,6 +379,14 @@ public class PageFactory {
      */
     public void openBook(BookList bookList) throws IOException {
         //清空数据
+        if (config==null){
+            Toast.makeText(mContext, "数据异常", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (bookList==null){
+            Toast.makeText(mContext, "数据异常", Toast.LENGTH_SHORT).show();
+            return;
+        }
         currentCharter = 0;
         initBg(config.getDayOrNight());
         this.bookList = bookList;

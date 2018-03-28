@@ -149,7 +149,7 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
     protected void onResume() {
         super.onResume();
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-
+            initFristData();
         } else {
             requestPermissins(new PermissionUtils.OnPermissionListener() {
                 @Override
@@ -172,15 +172,15 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
             MediaLoader.getLoader().loadFiles(LocalBookshelfActivity.this, new OnFileLoaderCallBack(FileType.DOC) {
                 @Override
                 public void onResult(FileResult result) {
-                    SharedPreferencesUtils.saveBoolean(LocalBookshelfActivity.this,"initFristData",false);
-                    if (result!=null&&result.getItems()!=null&&result.getItems().size()>0){
+                    SharedPreferencesUtils.saveBoolean(LocalBookshelfActivity.this, "initFristData", false);
+                    if (result != null && result.getItems() != null && result.getItems().size() > 0) {
                         List<BookList> bookLists = new ArrayList<BookList>();
                         for (FileItem item : result.getItems()) {
 
                             if (item.getMime().equals("text/plain")) {
-                                Log.e("taohiali",item.getMime());
-                                Log.e("taohiali",item.getDisplayName());
-                                Log.e("taohiali",item.getPath());
+                                Log.e("taohiali", item.getMime());
+                                Log.e("taohiali", item.getDisplayName());
+                                Log.e("taohiali", item.getPath());
                                 BookList bookList = new BookList();
 //                                String bookName = FileUtils.getFileName(item.getPath());
                                 bookList.setBookname(item.getDisplayName());
@@ -193,7 +193,7 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
                     }
                 }
             });
-        }else{
+        } else {
             bookLists.clear();
             bookLists.addAll(getBooks());
             adapter.notifyDataSetChanged();
@@ -237,6 +237,7 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
                 view.findViewById(R.id.tv_about).setOnClickListener(this);
                 view.findViewById(R.id.tv_share).setOnClickListener(this);
                 view.findViewById(R.id.add_book).setOnClickListener(this);
+                view.findViewById(R.id.find_book).setOnClickListener(this);
                 if (popWindow == null) {
                     popWindow = new CustomPopWindow.PopupWindowBuilder(this)
                             .setView(view)
@@ -251,6 +252,26 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
             case R.id.tv_edit:
                 isDel = !isDel;
                 adapter.notifyDataSetChanged();
+                popWindow.dissmiss();
+                break;
+
+            case R.id.find_book:
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                    startActivity(new Intent(LocalBookshelfActivity.this,FindBookActivity.class));
+                } else {
+                    requestPermissins(new PermissionUtils.OnPermissionListener() {
+                        @Override
+                        public void onPermissionGranted() {
+                            startActivity(new Intent(LocalBookshelfActivity.this,FindBookActivity.class));
+                        }
+
+                        @Override
+                        public void onPermissionDenied(String[] deniedPermissions) {
+
+                        }
+                    });
+                }
+
                 popWindow.dissmiss();
                 break;
 
@@ -325,7 +346,7 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
                 try {
                     File filename = new File(bookpath); // 要读取以上路径的input。txt文件
                     String charset = FileUtils.getCharset(bookpath);
-                    reader = new InputStreamReader(new FileInputStream(filename),charset);
+                    reader = new InputStreamReader(new FileInputStream(filename), charset);
                     BufferedReader br = new BufferedReader(reader); // 建立一个对象，它把文件内容转成计算机能读懂的语言
                     String line = "";
                     StringBuffer buf = new StringBuffer();
@@ -339,7 +360,7 @@ public class LocalBookshelfActivity extends BaseActivity implements View.OnClick
                     }
 
                     String msg = buf.toString();
-                    Log.e("taohaili",msg);
+                    Log.e("taohaili", msg);
                     bookList.setMsg(msg);
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -64,6 +64,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".FindBookActivity"></activity>
     </application>
 
 </manifest>
