@@ -29,10 +29,8 @@ public class AboutActivity extends BaseActivity {
         });
         TextView tvMsg = (TextView) findViewById(R.id.tv_msg);
         tvMsg.setMovementMethod(LinkMovementMethod.getInstance());
-        tvMsg.setText("\t\t\t\t 一款干净美观的本地电子书阅读器，为了世界和平，决定将代码开源，" +
-                "稍加处理，即可实现各种梦幻功能。\n\n" +
-                "如果您有任何问题/疑问/错误请发邮件：taohailili@gmail.com，\n\n" +
-                "获取源码地址:\n https://my.oschina.net/u/2440407/blog/1607740");
+        tvMsg.setText("软件说明：\n\t\t\t\t一款干净美观的本地电子书阅读器,软件界面简洁，无广告。本软件作为开源项目进行开发，一起努力吧 ! ! !\t\t\t\t" +
+                "\n\n获取源码地址:\n \t\t\t\thttps://my.oschina.net/u/2440407/blog/1607740");
     }
 
     @Override
